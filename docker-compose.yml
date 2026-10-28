@@ -16,6 +16,10 @@ services:
   backend:
     image: kunamjahnavi/docker-backend-2400030800:latest
     container_name: docker-springboot
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgresdb:5432/restaurantreview_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: docker
     ports:
       - "8081:8081"
     depends_on:
